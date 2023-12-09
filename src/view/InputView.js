@@ -2,6 +2,7 @@ import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
 import reTry from '../utils/reTry.js';
 import CoachNamesValidator from '../utils/validators/CoachNamesValidator.js';
+import UnwantedMenuValidator from '../utils/validators/UnwantedMenuValidator.js';
 
 const InputView = {
   async readCoachNames() {
@@ -16,7 +17,7 @@ const InputView = {
   async readUnwantedMenu(coachName) {
     return reTry(async () => {
       const unwantedMenu = await Console.readLineAsync(`${coachName}${MESSAGE.read.unwantedMenu}`);
-      // Validator
+      UnwantedMenuValidator.validateUnwantedMenu(unwantedMenu);
 
       return unwantedMenu;
     });
