@@ -10,6 +10,10 @@ const OutputView = {
     console.print(MESSAGE.print.resultHeader);
   },
 
+  printWeekString() {
+    console.print(MESSAGE.print.week);
+  },
+
   printEndString() {
     Console.print(MESSAGE.print.end);
   },
