@@ -6,6 +6,10 @@ const OutputView = {
     Console.print(MESSAGE.print.start);
   },
 
+  printResultHeaderString() {
+    console.print(MESSAGE.print.resultHeader);
+  },
+
   printEndString() {
     Console.print(MESSAGE.print.end);
   },

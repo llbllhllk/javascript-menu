@@ -13,7 +13,7 @@ class LunchMenuController {
 
   start() {
     this.#outputView.printStartString();
-    this.#outputView.printEndString();
+
     return this.#inputCoachNames();
   }
 
@@ -31,6 +31,12 @@ class LunchMenuController {
       const unwantedMenu = await this.#inputView.readUnwantedMenu(name);
       this.#lunchMenuService.setUnwantedMenu(unwantedMenu);
     }, Promise.resolve());
+
+    return this.#printRecommandResult();
+  }
+
+  #printRecommandResult() {
+    this.#outputView.printRecommandResultString();
   }
 }
 
