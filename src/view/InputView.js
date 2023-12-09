@@ -1,12 +1,13 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
 import reTry from '../utils/reTry.js';
+import CoachNamesValidator from '../utils/validators/CoachNamesValidator.js';
 
 const InputView = {
   async readCoachNames() {
     return reTry(async () => {
       const coachNames = await Console.readLineAsync(MESSAGE.read.coachNames);
-      // Validator
+      CoachNamesValidator.validateCoachNames(coachNames);
 
       return coachNames;
     });
