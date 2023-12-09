@@ -7,11 +7,21 @@ const OutputView = {
   },
 
   printResultHeaderString() {
-    console.print(MESSAGE.print.resultHeader);
+    Console.print(MESSAGE.print.resultHeader);
   },
 
   printWeekString() {
-    console.print(MESSAGE.print.week);
+    Console.print(MESSAGE.print.week);
+  },
+
+  printCategoryString() {
+    Console.print(MESSAGE.print.category);
+  },
+
+  printRecommandResultString() {
+    this.printResultHeaderString();
+    this.printWeekString();
+    this.printCategoryString();
   },
 
   printEndString() {
