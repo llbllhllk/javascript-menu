@@ -11,6 +11,15 @@ const InputView = {
       return coachNames;
     });
   },
+
+  async readUnwantedMenu(coachName) {
+    return reTry(async () => {
+      const unwantedMenu = await Console.readLineAsync(`${coachName}${MESSAGE.read.unwantedMenu}`);
+      // Validator
+
+      return unwantedMenu;
+    });
+  },
 };
 
 export default InputView;

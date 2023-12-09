@@ -17,7 +17,12 @@ class LunchMenuController {
 
   async #inputCoachNames() {
     const coachNames = await this.#inputView.readCoachNames();
-    console.log(coachNames);
+
+    this.#inputUnwantedMenu();
+  }
+
+  async #inputUnwantedMenu() {
+    const unwantedMenu = await this.#inputView.readUnwantedMenu('coach');
   }
 }
 
