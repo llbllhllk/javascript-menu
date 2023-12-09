@@ -12,7 +12,12 @@ class LunchMenuController {
   }
 
   start() {
-    console.log('Hello World!');
+    this.#inputCoachNames();
+  }
+
+  async #inputCoachNames() {
+    const coachNames = await this.#inputView.readCoachNames();
+    console.log(coachNames);
   }
 }
 
