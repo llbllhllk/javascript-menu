@@ -3,11 +3,18 @@ class Coach {
 
   #unwantedMenu;
 
-  constructor() {
-
+  constructor(name, unwantedMenu) {
+    this.#name = name;
+    this.#unwantedMenu = unwantedMenu;
   }
 
-  
+  getName() {
+    return this.#name;
+  }
+
+  getUnwantedMenu() {
+    return this.#unwantedMenu;
+  }
 }
 
 export default Coach;
