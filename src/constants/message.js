@@ -5,8 +5,9 @@ const read = Object.freeze({
 
 const print = Object.freeze({
   start: '점심 메뉴 추천을 시작합니다.\n',
+  end: '추천을 완료했습니다.',
 });
 
 const MESSAGE = Object.freeze({ read, print });
 
-export default MESSAGE; p
+export default MESSAGE;
