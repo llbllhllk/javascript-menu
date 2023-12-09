@@ -3,6 +3,10 @@ const read = Object.freeze({
   unwantedMenu: '(이)가 못 먹는 메뉴를 입력해 주세요.\n',
 });
 
-const MESSAGE = Object.freeze({ read });
+const print = Object.freeze({
+  start: '점심 메뉴 추천을 시작합니다.\n',
+});
 
-export default MESSAGE;
+const MESSAGE = Object.freeze({ read, print });
+
+export default MESSAGE; p
