@@ -20,8 +20,13 @@ describe('코치 이름 예외 상황 테스트', () => {
     },
     {
       input: 'a, b, c, d, asdfe',
-      description: '이름이 최소 2글자, 최대 4글자가 아닌 경우',
+      description: '이름이 최소 2글자, 최대 4글자가 아닌 경우 예외처리를 한다.',
       expected: ERROR.coachNames.length,
+    },
+    {
+      input: 'asdf, asdf, sdf',
+      description: '이름이 중복되었을 경우 예외처리를 한다.',
+      expected: ERROR.coachNames.duplicated,
     },
   ];
 

@@ -8,6 +8,7 @@ class CoachNamesValidator {
     this.#validateSeparator(coachNames);
     this.#validateParticipants(formattedCoachNames);
     this.#validateName(formattedCoachNames);
+    this.#validateDuplicated(formattedCoachNames);
   }
 
   static #validateEmpty(coachNames) {
@@ -18,7 +19,7 @@ class CoachNamesValidator {
     const formattedCoachNames = coachNames
       .split(CONSTANTS.coachNames.separator)
       .map(name => name.trim());
-    const emptyCount = formattedCoachNames.filter(number => !number.trim()).length;
+    const emptyCount = formattedCoachNames.filter(name => !name.trim()).length;
     if (emptyCount > CONSTANTS.number.zero) throw new Error(ERROR.coachNames.separator);
   }
 
@@ -35,6 +36,11 @@ class CoachNamesValidator {
       if (name.length < CONSTANTS.coachNames.min || name.length > CONSTANTS.coachNames.max)
         throw new Error(ERROR.coachNames.length);
     });
+  }
+
+  static #validateDuplicated(formattedCoachNames) {
+    if (formattedCoachNames.length !== new Set(formattedCoachNames).size)
+      throw new Error(ERROR.coachNames.duplicated);
   }
 
   static #formatCoachNames(coachNames) {
