@@ -16,7 +16,7 @@ const InputView = {
 
   async readUnwantedMenu(coachName) {
     return reTry(async () => {
-      const unwantedMenu = await Console.readLineAsync(`${coachName}${MESSAGE.read.unwantedMenu}`);
+      const unwantedMenu = await Console.readLineAsync(`\n${coachName}${MESSAGE.read.unwantedMenu}`);
       UnwantedMenuValidator.validateUnwantedMenu(unwantedMenu);
 
       return unwantedMenu;

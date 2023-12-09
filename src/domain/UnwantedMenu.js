@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants/constants.js';
 import UnwantedMenuValidator from '../utils/validators/UnwantedMenuValidator.js';
 
 class UnwantedMenu {

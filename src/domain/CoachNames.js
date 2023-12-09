@@ -1,4 +1,5 @@
-import CoachNamesValidator from '../utils/validators/CoachNamesValidator';
+import CONSTANTS from '../constants/constants.js';
+import CoachNamesValidator from '../utils/validators/CoachNamesValidator.js';
 
 class CoachNames {
   #coachNames;
