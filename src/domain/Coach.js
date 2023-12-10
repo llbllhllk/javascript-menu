@@ -1,19 +1,17 @@
+import CONSTANTS from '../constants/constants.js';
+
 class Coach {
   #name;
 
-  #unwantedMenu;
+  #recommandMenus;
 
-  constructor(name, unwantedMenu) {
+  constructor(name, recommandMenus) {
     this.#name = name;
-    this.#unwantedMenu = unwantedMenu;
+    this.#recommandMenus = recommandMenus;
   }
 
-  getName() {
-    return this.#name;
-  }
-
-  getUnwantedMenu() {
-    return this.#unwantedMenu;
+  getRecommandResultString() {
+    return `[ ${this.#name} | ${this.#recommandMenus.join(CONSTANTS.string.separator)} ]`;
   }
 }
 

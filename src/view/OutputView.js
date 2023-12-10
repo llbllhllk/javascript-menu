@@ -1,5 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
+import CONSTANTS from '../constants/constants.js';
 
 const OutputView = {
   printStartString() {
@@ -14,14 +15,15 @@ const OutputView = {
     Console.print(MESSAGE.print.week);
   },
 
-  printCategoryString() {
-    Console.print(MESSAGE.print.category);
+  printCategoryString(category) {
+    Console.print(`[ 카테고리 | ${category.join(CONSTANTS.string.separator)} ]`);
   },
 
-  printRecommandResultString() {
+  printRecommandResultString(recommandResultString, category) {
     this.printResultHeaderString();
     this.printWeekString();
-    this.printCategoryString();
+    this.printCategoryString(category);
+    recommandResultString.forEach(result => Console.print(result));
   },
 
   printEndString() {

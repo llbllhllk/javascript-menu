@@ -36,7 +36,12 @@ class LunchMenuController {
   }
 
   #printRecommandResult() {
-    this.#outputView.printRecommandResultString();
+    this.#lunchMenuService.setRecommandMenus();
+    this.#lunchMenuService.setCoaches();
+    const category = this.#lunchMenuService.getCategory();
+    const recommandResultString = this.#lunchMenuService.getRecommandString();
+    this.#outputView.printRecommandResultString(recommandResultString, category);
+    this.#outputView.printEndString();
   }
 }
 
